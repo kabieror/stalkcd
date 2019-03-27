@@ -1,0 +1,60 @@
+{
+  "name": "master-thesis-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/stalk-cd.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "test": "nyc mocha --inline-diffs -r ts-node/register test/**/*.ts --timeout=10000",
+    "prestart": "tsc",
+    "antlr4ts": "antlr4ts -o src/io/jenkinsfile/antlr4/ -visitor src/io/jenkinsfile/antlr4/jenkinsfile.g4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@okds.de:56909/kabieror/master-thesis-generator.git"
+  },
+  "author": "Oliver Kabierschke",
+  "license": "ISC",
+  "dependencies": {
+    "@types/dagre": "^0.7.40",
+    "@types/diff": "^4.0.1",
+    "@types/node": "^10.12.8",
+    "antlr4ts": "^0.5.0-alpha.1",
+    "commander": "^2.19.0",
+    "dagre": "^0.8.4",
+    "deep-cleaner": "^1.1.2",
+    "diff": "^4.0.1",
+    "js-yaml": "^3.12.0",
+    "node": "^11.1.0",
+    "node-fetch": "^2.3.0",
+    "randomatic": "^3.1.1",
+    "readline-sync": "^1.4.9",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/js-yaml": "^3.11.2",
+    "@types/mocha": "^5.2.5",
+    "@types/node-fetch": "^2.1.5",
+    "@types/readline-sync": "^1.4.3",
+    "@types/xml2js": "^0.4.3",
+    "antlr4ts-cli": "^0.5.0-alpha.1",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "ts-node": "^8.0.1",
+    "typescript": "^2.9.2"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "dist",
+      "coverage"
+    ],
+    "all": true
+  }
+}

@@ -1,0 +1,8 @@
+
+node_modules/
+dist/
+
+src/io/jenkinsfile/antlr4/\.antlr/
+.nyc_output/
+res/*.source/
+res/*.target/
